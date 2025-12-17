@@ -4,7 +4,7 @@
 
 ### update-zola-post-updated-date
 
-A Zola post usually has the `date` metadata in its front matter to indicate the post creation date. It can also has the `updated` metadata to specify the post updated date. [This hook](hooks/update-zola-post-updated-date/update_zola_post_updated_date.sh) looks at each markdown file that is neither `README.md` nor `_index.md`, and then adds or updates the `updated` metadata of the file based on its modification date.
+A Zola post usually has the `date` metadata in its front matter to indicate the post creation date. It can also has the `updated` metadata to specify the post updated date. [This hook](hooks/update-zola-post-updated-date/update_zola_post_updated_date.sh) looks at each markdown file that is neither `README.md` nor `_index.md`, and then adds or updates the `updated` metadata to the current date.
 
 ## How to use
 

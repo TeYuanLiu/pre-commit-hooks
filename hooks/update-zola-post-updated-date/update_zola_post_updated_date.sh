@@ -4,7 +4,7 @@ updated_date_pattern="^updated\s?=\s?([0-9-]{6,10})$"
 date_pattern="^date\s?=\s?([0-9-]{6,10})$"
 
 for file in $@; do
-    desired_updated_date="$(date -r $file +%Y-%m-%d)"
+    desired_updated_date="$(date +%Y-%m-%d)"
 
     if grep -q -E "$updated_date_pattern" "$file"; then
         actual_updated_date="$(grep -m 1 -Po "^updated\s?=\s?\K([0-9-]{6,10})$" $file)"
