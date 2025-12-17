@@ -11,7 +11,7 @@ A Zola post usually has the `date` metadata in its front matter to indicate the 
 1.  Add the following to your `.pre-commit-config.yaml`. Keep the desired hook IDs and remove the rest.
     ```yaml
     -   repo: https://github.com/teyuanliu/pre-commit-hooks
-        rev: v0.1.0
+        rev: v0.1.2
         hooks:
         -   id: update-zola-post-updated-date
     ```
