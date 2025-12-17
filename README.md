@@ -1,15 +1,15 @@
-# pre-commit-hook
+# pre-commit-hooks
 
 ## update-zola-post-updated-date
 
-A Zola post usually has the "date" metadata in its front matter to indicate the post creation date. It can also has the "updated" metadata to specify the post updated date. This hook looks at each markdown file that is neither README.md nor _index.md, and then adds or updates the "updated" metadata of the file based on its modification date.
+A Zola post usually has the `date` metadata in its front matter to indicate the post creation date. It can also has the `updated` metadata to specify the post updated date. This hook looks at each markdown file that is neither `README.md` nor `_index.md`, and then adds or updates the `updated` metadata of the file based on its modification date.
 
 ### How to use
 
 1.  Add the following to your `.pre-commit-config.yaml`.
     ```yaml
-    -   repo: https://github.com/teyuanliu/pre-commit-hook
-        rev: main
+    -   repo: https://github.com/teyuanliu/pre-commit-hooks
+        rev: v0.1.0
         hooks:
         -   id: update-zola-post-updated-date
     ```
@@ -29,4 +29,8 @@ A Zola post usually has the "date" metadata in its front matter to indicate the 
 
     Adding the updated date: 2025-12-31 to the next line of the date: 2025-01-01 in: example.md
     ```
-1.  Well done!
+1.  Finished!
+1.  In the future, update the hook if needed.
+    ```bash
+    pre-commit autoupdate --repo https://github.com/teyuanliu/pre-commit-hooks
+    ```
