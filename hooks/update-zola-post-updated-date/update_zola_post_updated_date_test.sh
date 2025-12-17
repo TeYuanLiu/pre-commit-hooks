@@ -3,7 +3,7 @@
 # --- Setup ---
 
 target_script="update_zola_post_updated_date.sh"
-target_script_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/${target_script}"
+target_script_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/$target_script"
 
 # --- Define run_test ---
 
@@ -12,7 +12,7 @@ run_test() {
     local initial_content="$2"
     local expected_content="$3"
 
-    local temp_file=$(mktemp test_XXXXXX.md)
+    local temp_file="$(mktemp test_XXXXXX.md)"
     echo -e "$initial_content" > "$temp_file"
 
     echo "Running: $test_name..."
@@ -25,7 +25,7 @@ run_test() {
         return 1
     fi
 
-    local actual_content=$(sed -zn 's/\n/\\n/g;$s/\\n$//p' "$temp_file")
+    local actual_content="$(sed -zn 's/\n/\\n/g;s/\\n$//p' "$temp_file")"
 
     if [[ "$actual_content" == "$expected_content" ]]; then
         echo -e "✅ PASS\n"
@@ -44,7 +44,7 @@ run_test() {
 
 # --- Predefined test case ---
 
-date=$(date +%Y-%m-%d)
+date="$(date +%Y-%m-%d)"
 
 test_case_1=("TwoUpdated" "+++\ntitle = TwoUpdated\nupdated = 2025-01-01\nupdated = 2025-01-01\n+++" "+++\ntitle = TwoUpdated\nupdated = ${date}\nupdated = 2025-01-01\n+++")
 test_case_2=("NoUpdatedTwoDate" "+++\ntitle = NoUpdatedTwoDate\ndate = 2025-01-01\ndate = 2025-01-01\n+++" "+++\ntitle = NoUpdatedTwoDate\ndate = 2025-01-01\nupdated = ${date}\ndate = 2025-01-01\n+++")
