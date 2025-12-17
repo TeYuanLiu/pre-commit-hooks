@@ -1,6 +1,6 @@
 -   id: update-zola-post-updated-date
     name: update-zola-post-updated-date
-    description: This hook adds or updates the "updated = YYYY-MM-DD" metadata of a staged .md file based on its modification date.
+    description: update-zola-post-updated-date
     entry: hook/update-zola-post-updated-date/update_zola_post_updated_date.sh
     language: script
     files: \.md$

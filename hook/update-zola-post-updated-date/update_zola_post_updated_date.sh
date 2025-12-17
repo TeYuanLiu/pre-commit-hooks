@@ -1,4 +1,5 @@
 #!/bin/bash
+
 updated_date_pattern="^updated\s?=\s?([0-9-]{8,10})$"
 date_pattern="^date\s?=\s?([0-9-]{8,10})$"
 
